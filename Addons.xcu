@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<oor:component-data 
+ xmlns:oor="http://openoffice.org/2001/registry"
+ xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ oor:name="Addons"
+ oor:package="org.openoffice.Office">
+	<node oor:name="AddonUI">
+		<node oor:name="OfficeHelp">
+				<node oor:name="ImpressRunner.OfficeHelp.m1" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.presentation.PresentationDocument</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>macro:///ImpressRunner.launcher.About</value>
+					</prop>
+					<prop oor:name="ImageIdentifier" oor:type="xs:string">
+						<value>%origin%/icons/impressrunnerStop</value>
+					</prop>
+					<prop oor:name="Title" oor:type="xs:string">
+						<value>About ImpressRunner</value>
+					</prop>
+					<prop oor:name="Target" oor:type="xs:string">
+						<value>_self</value>
+					</prop>
+				</node>
+		</node>
+		<node oor:name="OfficeToolBar">
+			<node oor:name="ImpressRunner.OfficeToolBar" oor:op="replace">
+				<node oor:name="m1" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.presentation.PresentationDocument</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>macro:///ImpressRunner.launcher.setAutostart</value>
+					</prop>
+					<prop oor:name="ImageIdentifier" oor:type="xs:string">
+						<value>%origin%/icons/impressrunnerStart</value>
+					</prop>
+					<prop oor:name="Title" oor:type="xs:string">
+						<value>Set Autostart</value>
+					</prop>
+					<prop oor:name="Target" oor:type="xs:string">
+						<value>_self</value>
+					</prop>
+				</node>
+				<node oor:name="m2" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.presentation.PresentationDocument</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>private:separator</value>
+					</prop>
+				</node>
+				<node oor:name="m3" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.presentation.PresentationDocument</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>macro:///ImpressRunner.launcher.removeAutostart</value>
+					</prop>
+					<prop oor:name="ImageIdentifier" oor:type="xs:string">
+						<value>%origin%/icons/impressrunnerStop</value>
+					</prop>
+					<prop oor:name="Title" oor:type="xs:string">
+						<value>Remove Autostart</value>
+					</prop>
+					<prop oor:name="Target" oor:type="xs:string">
+						<value>_self</value>
+					</prop>
+				</node>
+			</node>
+		</node>
+		<node oor:name="AddonMenu">
+				<node oor:name="ImpressRunner.AddonMenu.m1" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.presentation.PresentationDocument</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>macro:///ImpressRunner.launcher.setAutostart</value>
+					</prop>
+					<prop oor:name="ImageIdentifier" oor:type="xs:string">
+						<value>%origin%/icons/impressrunnerStart</value>
+					</prop>
+					<prop oor:name="Title" oor:type="xs:string">
+						<value>Set Autostart</value>
+					</prop>
+					<prop oor:name="Target" oor:type="xs:string">
+						<value>_self</value>
+					</prop>
+				</node>
+				<node oor:name="ImpressRunner.AddonMenu.m2" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.presentation.PresentationDocument</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>macro:///ImpressRunner.launcher.removeAutostart</value>
+					</prop>
+					<prop oor:name="ImageIdentifier" oor:type="xs:string">
+						<value>%origin%/icons/impressrunnerStop</value>
+					</prop>
+					<prop oor:name="Title" oor:type="xs:string">
+						<value>Remove Autostart</value>
+					</prop>
+					<prop oor:name="Target" oor:type="xs:string">
+						<value>_self</value>
+					</prop>
+				</node>
+		</node>
+	</node>
+</oor:component-data>
