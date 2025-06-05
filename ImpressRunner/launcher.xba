@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="launcher" script:language="StarBasic">REM  *****  BASIC  *****
+
+sub setAutostart
+	found = False
+	i = 0
+	while i &lt; 4 and not found
+		if thisComponent.documentInfo.getUserfieldValue(i) = &quot;autostart&quot; then
+		 	found = true
+		endif
+		i = i +1
+	wend
+	if not found then
+		done = false
+		i = 0
+		while i &lt; 4 and not done
+			if thisComponent.documentInfo.getUserfieldValue(i) = &quot;&quot; then
+				thisComponent.documentInfo.setUserfieldValue(i,&quot;autostart&quot;)
+			 	done = true
+			endif
+			i = i +1
+		wend		
+	endif
+
+	if not done then
+		msgbox &quot;Autostart failed&quot;, 48, &quot;ImpressRunner extension&quot;
+	
+	else
+		msgbox &quot;Impress Runner Autostart Done !&quot;, 32, &quot;ImpressRunner extension&quot;
+	endif
+	
+end sub
+
+sub removeAutostart
+
+	i = 0
+	while i &lt; 4
+		if thisComponent.documentInfo.getUserfieldValue(i) = &quot;autostart&quot; then
+			thisComponent.documentInfo.setUserfieldValue(i,&quot;&quot;)
+		 	done = true
+		endif
+		i = i +1
+	wend		
+
+	msgbox &quot;Impress Runner Autostart removed !&quot;, 32, &quot;ImpressRunner extension&quot;
+
+end sub
+
+sub About
+	
+	&apos;TODO: better one
+	
+	nl = chr(10)
+	message =           &quot;                            ImpressRunner&quot;
+	message = message + nl + nl 
+	message = message + &quot;                    Extension under LGPL licence&quot;
+	message = message + nl + nl 
+	message = message + &quot;   by Laurent Godard &lt;LaurentGodard@openoffice.org&gt;&quot; 
+	message = message + nl + nl 
+	message = message + &quot;   Graphics by Ben Bois &lt;bbois@laposte.net&gt;&quot;
+	message = message + nl + nl 
+
+	
+	msgbox message
+	
+end sub
+
+</script:module>
