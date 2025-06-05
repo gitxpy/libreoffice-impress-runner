@@ -125,13 +125,17 @@ class ImpressRunner(unohelper.Base, XJob):
         self.desktop = self.tools.getDesktop()
 
     def execute(self, args):
-        self.document = self.desktop.getCurrentComponent()
+        arg1 = args[0]
+        for struct in arg1.Value:
+            if struct.Name=='Model':
+                self.document = struct.Value
+
         if self.document.supportsService("com.sun.star.presentation.PresentationDocument"):
-            #can we detect autostart to any of the 4 UserFieldValue
             is_autostart = False
-            for i in range(4):
-                if self.document.DocumentInfo.getUserFieldValue(i) == "autostart":
-                    is_autostart = True
+            docInfo = self.document.DocumentProperties.UserDefinedProperties
+            if docInfo.PropertySetInfo.hasPropertyByName("autostart"):
+                is_autostart = docInfo.getPropertyValue("autostart")
+
             # the document is an impress document
             if (is_autostart or self.document.URL.endswith('.pps')):
                 # the metadata is there !! or it is a .pps file
