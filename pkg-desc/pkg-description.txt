@@ -1,5 +1,5 @@
 ImpressRunner
-Copyright (c) 2007-2012 Laurent Godard
+Copyright (c) 2007-2015 Laurent Godard
 lgodard.libre@laposte.net
 
 This extension is under LGPL licence
